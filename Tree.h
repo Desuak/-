@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 struct Node
 {
     int x;
@@ -13,7 +12,7 @@ void show(Node *&Tree)
 	if (Tree != NULL)
 	{
 	   show(Tree->left);
-	   cout << Tree->x << '\t';
+	   std::cout << Tree->x << '\T';
 	   show(Tree->right);
 	}
 }
@@ -53,6 +52,7 @@ void add_node(int x,Node *&MyTree)
                               MyTree->right->left = MyTree->right->right = NULL;
                               MyTree->right->x = x;
                           }
+                      }
                       }
 
 

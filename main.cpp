@@ -3,62 +3,72 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
-         void menu()
-         {
-             int  f;
-             while (true) {
-        f = -1;
-        std::cout
-                << "\nEnter figure:\n"
-                   "\t#0 - n-kyt\n"
-                   "\t#1 - kvadrat;\n"
-                   "\t#2 - treygol;\n"
-                   "\t#3 - romb\n"
-                   "\t#4 - pramokyt\n"
+void menu(){
+    int  f;
+    int p();
+    int s();
+    while (true) {
+            f = -1;
+            std::cout<< "\nEnter figure:\n"<<
+                   "\t#0 - n-kyt\n"<<
+                   "\t#1 - kvadrat;\n"<<
+                   "\t#2 - treygol;\n"<<
+                   "\t#3 - romb\n"<<
+                   "\t#4 - pramokyt\n"<<
                    "#5 - back\n";
         while ((f < 0) || (f >5 )) {
             std::cout << "\n#";
             std::cin >> f;
         }
+        switch (f){
         case 0: {
-                N-kyt*figure= new N-kyt();
-                count<<"Naberite n \n"<<endl;
-                cin>>n;
-                cout<<"Naberite R \n"<<endl;
-                cin>>R;
-                cout<<"Naberite r\n"<<endl;
-                cin>>r;
+                int n,R,r;
+                std::cout<<"Naberite n \n";
+                std::cin >> n;
+                std::cout<<"Naberite R \n";
+                std::cin >> R;
+                std::cout<<"Naberite r\n";
+                std::cin>>r;
+                Nkyt*figure= new Nkyt(n,R,r);
+                figure->print_info();
                 break;
             }
             case 1: {
-                Kvadrat*figure= new Kvadrat();
-                cout<<"Naberite storony \n"<<endl;
-                cin>>a;
+                int a;
+                std::cout<<"Naberite storony \n";
+                std::cin>>a;
+                Kvadrat*figure= new Kvadrat(a);
+                figure->print_info();
                 break;
                 }
             case 2: {
-                Treygol*figure= new Treygol();
-                cout<<"Naberite storony \n"<<endl;
-                cin>>a;
+                int a;
+                std::cout<<"Naberite storony \n";
+                std::cin>>a;
+                Treygol*figure= new Treygol(a);
+                figure->print_info();
                 break;
             }
             case 3: {
-                Romb*figure= new Romb();
-                cout<<"Naberite storony \n"<<endl;
-                cin>>a;
-                cout<<"Naberite r \n"<<endl;
-                cin>>r;
-                cout<<"Naberite h \n"<<endl;
-                cin>>h;
+                int a,h,r;
+                std::cout<<"Naberite storony \n";
+                std::cin>>a;
+                std::cout<<"Naberite r \n";
+                std::cin>>r;
+                std::cout<<"Naberite h \n";
+                std::cin>>h;
+                Romb*figure= new Romb(a,h,r);
+                figure->print_info();
                 break;
                 }
             case 4: {
-                Pramoygolnik*figure= new Pramoygolnik();
-                cout<<"Naberite dliny"<<endl;
-                cin>>a;
-                cout<<"Naberite shiriny"<<endl;
-                cin>>t;
+                int a,t;
+                std::cout<<"Naberite dliny";
+                std::cin>>a;
+                std::cout<<"Naberite shiriny";
+                std::cin>>t;
+                Pramoygolnik*figure= new Pramoygolnik(a,t);
+                figure->print_info();
                 break;
             }
             case 5: {
@@ -67,4 +77,8 @@ using namespace std;
             default:;
         }
     }
+}
+int main() {
+    menu();
+    return 0;
 }
